@@ -1,0 +1,21 @@
+---
+- name: Check if servers are alive
+  hosts: all
+  tasks:
+  - name: Check connectivity
+    ping:
+      data: pong from Ansible
+
+  - name: Request a vm using the template HV-122
+    command: sleep 5
+    register: therequest
+
+  - name: Wait for ACK that the vm is created
+    ping:
+      data: pong from Ansible
+
+  - name: The vm is being provisioned, you will get notified when it is done.
+    ping:
+      data: pong from Ansible
+
+

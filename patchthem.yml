@@ -1,0 +1,9 @@
+---
+- name: Check if servers are alive
+  hosts: all
+  tasks:
+  - name: Checking for updates to apply
+    ping:
+      data: pong from Ansible
+  - name: Installing all updates that apply
+    command: sleep 5
