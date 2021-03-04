@@ -1,0 +1,50 @@
+---
+- name: Enable intranet services
+  hosts: webserver.example.com
+  become: yes
+  tasks:
+    - name: latest versions of httpd and firewalld installed
+      yum:
+        name:
+          - httpd
+          - firewalld
+          - mariadb-server
+          - php
+          - php-mysqlnd
+        state: latest
+    - name: index html page is installed
+      get_url:
+        url: http://materials.example.com/index.php
+        dest: /var/www/html/index.html
+    - name: firewalld enabled and running
+      service:
+        name: firewalld
+        enabled: true
+        state: started
+    - name: firewalld permits access to httpd service
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: yes
+    - name: httpd enabled and running
+      service:
+        name: httpd
+        enabled: true
+        state: started
+    - name: mariadb enabled and running
+      service:
+        name: mariadb
+        enabled: true
+        state: started
+
+
+- name: Test intranet web server
+  hosts: localhost
+  become: no
+  tasks:
+    - name: connect to intranet web server
+      uri:
+        url: http://webserver.example.com
+        return_content: yes
+        status_code: 200
