@@ -1,0 +1,10 @@
+- name: Unlock my user
+  hosts: all
+  gather_facts: False
+  tasks:
+  - name: is the domain responisive
+    win_ping:
+  - name: Unlock this users account
+    win_domain_user:
+      name: "{{ user_name }}"
+      account_locked: no
