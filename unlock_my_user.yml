@@ -2,7 +2,7 @@
   hosts: all
   gather_facts: False
   tasks:
-  - name: is the domain responisive
+  - name: is the domain responsive
     win_ping:
   - name: Unlock this users account
     win_domain_user:
