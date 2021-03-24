@@ -1,6 +1,7 @@
 ---
 - name: Make jfrog repository
   hosts: all
+  gather_facts: False
   tasks:
   - name: Make jfrog repository 
     ping:

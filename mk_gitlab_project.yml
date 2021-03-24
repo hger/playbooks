@@ -1,6 +1,7 @@
 ---
 - name: Make gitlab proj
   hosts: all
+  gather_facts: False
   tasks:
   - name: Make gitlab proj 
     ping:
