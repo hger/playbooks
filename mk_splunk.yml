@@ -1,0 +1,7 @@
+---
+- name: Splunk connector
+  hosts: all
+  tasks:
+  - name: Setup of Splunk connector 
+    ping:
+      data: pong from Ansible

@@ -1,0 +1,10 @@
+---
+- name: Make jfrog repository
+  hosts: all
+  tasks:
+  - name: Make jfrog repository 
+    ping:
+      data: pong from Ansible
+  - name: Set access rights 
+    ping:
+      data: pong from Ansible

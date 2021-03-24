@@ -1,0 +1,10 @@
+---
+- name: Make gitlab proj
+  hosts: all
+  tasks:
+  - name: Make gitlab proj 
+    ping:
+      data: pong from Ansible
+  - name: Add access rights 
+    ping:
+      data: pong from Ansible
