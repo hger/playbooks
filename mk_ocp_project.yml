@@ -1,0 +1,8 @@
+---
+- name: OpenShift project
+  hosts: all
+  gather_facts: False
+  tasks:
+  - name: Create OpenShift project 
+    ping:
+      data: pong from Ansible

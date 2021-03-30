@@ -1,0 +1,11 @@
+---
+- name: Make AD group
+  hosts: all
+  gather_facts: False
+  tasks:
+  - name: Make AD group 
+    ping:
+      data: pong from Ansible
+  - name: Populate AD group 
+    ping:
+      data: pong from Ansible
