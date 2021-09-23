@@ -5,6 +5,6 @@
   - name: is the domain responsive
     win_ping:
   - name: Unlock this users account
-    community.windows.win_domain_user:
+    win_domain_user:
       name: "{{ user_name }}"
       account_locked: no
